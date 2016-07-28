@@ -1,0 +1,24 @@
+{% if menu %}
+{% if needs_search %}<form role="search" method="get" action="{{site.url}}">{% endif %}
+<ul class="{{class}}" {% for item in data %}data-{{item}} {% endfor %}>
+{% for item in menu %}
+	<li class="{{item.classes | join(' ')}}{% if item.get_children|length > 0 %} has-submenu{% endif %}">
+		<a href="{{item.get_link}}">{{item.title}}</a>
+		{% if item.get_children|length > 0 %}
+			{% include "menu.twig" with {'menu': item.get_children, 'class':'submenu menu vertical hide-for-small-only', 'data': ['submenu'], 'needs_search': false } %}
+		{% endif %}
+	</li>
+{% endfor %}
+{% if needs_search %}
+	<li class="menu-item menu-search">
+		<input name="s" id="s" class="input-group-field" type="text" placeholder="Search">
+	</li>
+	<li class="menu-item menu-search">
+		<button class="button">
+			<i class="fa fa-search"></i>
+		</button>
+	</li>
+{% endif %}
+</ul>
+{% if needs_search %}</form>{% endif %}
+{% endif %}

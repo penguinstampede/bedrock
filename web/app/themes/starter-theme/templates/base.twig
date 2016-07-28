@@ -1,0 +1,51 @@
+{% block html_head_container %}
+
+{% include 'html-header.twig' %}
+	{% block head %}
+	{% endblock %}
+	</head>
+{% endblock %}
+
+	<body class="{{body_class}}" data-template="base.twig">
+		<!--[if lt IE 8]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+		<header class="header" >
+			{% block header %}
+				<div class="top-bar">
+					<div class="top-bar-left">
+    				<ul class="menu">
+      				<li>
+								<a href="{{site.url}}" rel="home">{{site.name}}</a>
+							</li>
+						</ul>
+					</div>
+					<div class="top-bar-right">
+						{% include "menu.twig" with {'menu': menu.get_items, 'class':'dropdown menu medium-horizontal vertical', 'data': ['dropdown-menu'], 'needs_search': true } %}
+					</div>
+				</div>
+			{% endblock %}
+		</header>
+
+		<section id="content" role="main" class="content-wrapper">
+			{% if title %}<h1>{{title}}</h1>{% endif %}
+			<div class="wrapper {{sidebar_class}}">
+				{% block content %}
+					Sorry, no content
+				{% endblock %}
+			</div>
+			{% if sidebar %}
+				<aside class="layout-sidebar">
+					{{sidebar}}
+				</aside>
+			{% endif %}
+		</section>
+
+		{% block footer %}
+			<footer id="footer">
+				{% include 'footer.twig' %}
+			</footer>
+			{{ function('wp_footer') }}
+		{% endblock %}
+	</body>
+</html>

@@ -1,0 +1,23 @@
+/*
+ * Theme Name: Starter Theme
+ * Description: Starter Theme using Timber and Foundation, please customize
+ * Author: Erin Kosewic
+*/
+
+@mixin vertical-align($position: relative) {
+  position: $position;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+//@import 'fonts';
+@import 'vendor/foundation/settings/settings';
+@import 'vendor/foundation/foundation';
+//@import 'motion-ui/motion-ui';
+
+@include foundation-everything;
+//@include motion-ui-transitions;
+
+//@import 'bricks';
