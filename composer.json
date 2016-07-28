@@ -30,6 +30,10 @@
     {
       "type": "composer",
       "url": "https://wpackagist.org"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/ChuckMac/ninja-forms-acf-field"
     }
   ],
   "require": {
@@ -38,7 +42,20 @@
     "vlucas/phpdotenv": "^2.0.1",
     "johnpbloch/wordpress": "4.5.3",
     "oscarotero/env": "^1.0",
-    "roots/wp-password-bcrypt": "1.0.0"
+    "roots/wp-password-bcrypt": "1.0.0",
+    "wpackagist-plugin/akismet":"*",
+    "wpackagist-plugin/timber-library":"*",
+    "wpackagist-plugin/query-monitor":"*",
+    "wpackagist-plugin/google-analytics-for-wordpress":"*",
+    "wpackagist-plugin/ninja-forms":"~2.9.53",
+    "wpackagist-plugin/admin-menu-editor":"*",
+    "wpackagist-plugin/better-font-awesome":"*",
+    "wpackagist-plugin/parsedown-wp":"*",
+    "wpackagist-plugin/wordpress-seo":"*",
+    "wpackagist-plugin/tiny-compress-images":"*",
+    "wpackagist-plugin/w3-total-cache":"*",
+    "chuckmac/ninja-forms-acf-field":"dev-master",
+    "folbert/fewbricks":"*"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^2.5.1"
